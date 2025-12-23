@@ -1,0 +1,16 @@
+langchain
+langchain-google-genai
+langchain-text-splitters
+langchain-groq
+langchain-postgres
+pgvector
+google-generativeai
+sentence-transformers
+pypdf2
+psycopg2-binary
+numpy
+python-dotenv
+fastapi
+uvicorn
+groq
+python-multipart

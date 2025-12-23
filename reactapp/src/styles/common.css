@@ -1,0 +1,139 @@
+.welcome-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.welcome-title {
+    font-size: 1.875em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.welcome-sub {
+    font-size: 1em;
+    color: var(--subtext);
+    margin-bottom: 14px;
+}
+
+.suggestions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    pointer-events: auto;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(63, 140, 255, 0.12);
+    border: none !important;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 0.875em;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .welcome-center {
+        max-width: 700px;
+    }
+
+    .suggestions {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-center {
+        max-width: 90%;
+        padding: 0 16px;
+    }
+
+    .welcome-title {
+        font-size: 1.5em;
+    }
+
+    .welcome-sub {
+        font-size: 0.875em;
+    }
+
+    .suggestions {
+        max-width: 100%;
+        gap: 8px;
+    }
+
+    .suggestion-item {
+        padding: 10px 12px;
+        font-size: 0.8125em;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-center {
+        max-width: 95%;
+        padding: 0 12px;
+    }
+
+    .welcome-title {
+        font-size: 1.25em;
+        margin-bottom: 6px;
+    }
+
+    .welcome-sub {
+        font-size: 0.8125em;
+        margin-bottom: 12px;
+    }
+
+    .suggestions {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .suggestion-item {
+        padding: 12px 16px;
+        font-size: 0.8125em;
+    }
+}
+
+@media (max-width: 360px) {
+    .welcome-title {
+        font-size: 1.125em;
+    }
+
+    .welcome-sub {
+        font-size: 0.75em;
+    }
+
+    .suggestion-item {
+        padding: 10px 14px;
+        font-size: 0.75em;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .welcome-center {
+        top: 45%;
+    }
+
+    .welcome-title {
+        font-size: 1.25em;
+    }
+
+    .welcome-sub {
+        font-size: 0.8125em;
+    }
+
+    .suggestions {
+        grid-template-columns: 1fr 1fr;
+    }
+}

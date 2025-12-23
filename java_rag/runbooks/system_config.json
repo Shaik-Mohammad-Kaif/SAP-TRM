@@ -1,0 +1,22 @@
+{
+    "app_name": "Murex RAG System",
+    "version": "2.0.0",
+    "database": {
+        "host": "127.0.0.1",
+        "port": 5433,
+        "name": "murexdb",
+        "extensions": [
+            "vector",
+            "plpgsql"
+        ]
+    },
+    "llm_config": {
+        "provider": "Groq",
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.1
+    },
+    "storage": {
+        "doc_chunks_table": "doc_chunks",
+        "history_table": "chat_history"
+    }
+}

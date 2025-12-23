@@ -1,0 +1,156 @@
+.help-container {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background: var(--chat-bg);
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.help-logo {
+    width: 48px;
+    height: 48px;
+    background: var(--icon-gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.375em;
+    font-weight: 800;
+    box-shadow: var(--shadow-soft);
+}
+
+.help-header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.help-header p {
+    font-size: 0.875em;
+    color: var(--muted);
+}
+
+.help-section {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.help-section h3 {
+    font-size: 0.9375em;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(45, 129, 122, 0.1);
+}
+
+.section-text {
+    font-size: 0.875em;
+    line-height: 1.7;
+    color: var(--subtext);
+    margin: 0;
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.capability-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px;
+    background: var(--chat-bg);
+    border-radius: 10px;
+}
+
+.capability-item span {
+    font-size: 1.5em;
+}
+
+.capability-item strong {
+    font-size: 0.8125em;
+    color: var(--text);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.capability-item p {
+    font-size: 0.75em;
+    color: var(--muted);
+    margin: 0;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    padding: 6px 14px;
+    background: rgba(45, 129, 122, 0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.support-info p {
+    font-size: 0.875em;
+    color: var(--subtext);
+    margin: 8px 0;
+}
+
+.support-info strong {
+    color: var(--text);
+}
+
+.help-footer {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 16px;
+    color: var(--muted);
+    font-size: 0.75em;
+}
+
+@media (max-width: 600px) {
+    .help-container {
+        padding: 28px 20px;
+    }
+
+    .help-section {
+        padding: 20px;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-logo {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5em;
+    }
+}
