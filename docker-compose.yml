@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: sap_trm_db
+    environment:
+      POSTGRES_USER: murex
+      POSTGRES_PASSWORD: murex
+      POSTGRES_DB: murexdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - sap_trm_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U murex -d murexdb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./java_rag
+    container_name: sap_trm_backend
+    environment:
+      - PG_CONN_STR=postgresql://murex:murex@db:5432/murexdb
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./java_rag/runbooks:/app/runbooks
+      - ./java_rag/pdfs:/app/pdfs
+
+  frontend:
+    build: ./reactapp
+    container_name: sap_trm_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  sap_trm_pgdata:
